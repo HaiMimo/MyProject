@@ -1,15 +1,15 @@
 "use strict";
 /* 0. Initialization */
 // Get height on Window resized
-$(window).on('resize',function(){
+$(window).on('resize', function () {
     var slideHeight = $('.slick-track').innerHeight();
-	return false;
+    return false;
 });
 
 
 // Smooth scroll <a> links 
 var $root = $('html, body');
-$('a.s-scroll').on('click',function() {
+$('a.s-scroll').on('click', function () {
     var href = $.attr(this, 'href');
     $root.animate({
         scrollTop: $(href).offset().top
@@ -20,7 +20,7 @@ $('a.s-scroll').on('click',function() {
 });
 
 // Page Loader : hide loader when all are loaded
-$(window).load(function(){
+$(window).load(function () {
     $('#page-loader').addClass('hidden');
 });
 
@@ -28,11 +28,11 @@ $(window).load(function(){
 /* 1. Clock attribute */
 
 var dateReadableText = 'Upcoming date';
-    if($('.site-config').attr('data-date-readable') && ($('.site-config').attr('data-date-readable') != '')){
-        $('.timeout-day').text('');
-        dateReadableText = $('.site-config').attr('data-date-readable');        
-        $('.timeout-day').text(dateReadableText);
-    }
+if ($('.site-config').attr('data-date-readable') && ($('.site-config').attr('data-date-readable') != '')) {
+    $('.timeout-day').text('');
+    dateReadableText = $('.site-config').attr('data-date-readable');
+    $('.timeout-day').text(dateReadableText);
+}
 $('.clock-countdown').downCount({
     date: $('.site-config').attr('data-date'),
     offset: +10
@@ -40,9 +40,9 @@ $('.clock-countdown').downCount({
     //callback here if finished
     //alert('YES, done!');
     var zerodayText = 'An upcoming date';
-    if($('.site-config').attr('data-zeroday-text') && ($('.site-config').attr('data-zeroday-text') != '')){
+    if ($('.site-config').attr('data-zeroday-text') && ($('.site-config').attr('data-zeroday-text') != '')) {
         $('.timeout-day').text('');
-        zerodayText = $('.site-config').attr('data-zeroday-text'); 
+        zerodayText = $('.site-config').attr('data-zeroday-text');
     }
     $('.timeout-day').text(zerodayText);
 });
@@ -58,26 +58,26 @@ var backgroundVideoUrl = 'none';
 var list = $('.bg-img');
 
 for (var i = 0; i < list.length; i++) {
-	var src = list[i].getAttribute('data-image-src');
-	list[i].style.backgroundImage = "url('" + src + "')";
-	list[i].style.backgroundRepeat = "no-repeat";
-	list[i].style.backgroundPosition = "center";
-	list[i].style.backgroundSize = "cover";
+    var src = list[i].getAttribute('data-image-src');
+    list[i].style.backgroundImage = "url('" + src + "')";
+    list[i].style.backgroundRepeat = "no-repeat";
+    list[i].style.backgroundPosition = "center";
+    list[i].style.backgroundSize = "cover";
 }
 
 /* Background color as data attribut */
 var list = $('.bg-color');
 for (var i = 0; i < list.length; i++) {
-	var src = list[i].getAttribute('data-bgcolor');
-	list[i].style.backgroundColor = src;
+    var src = list[i].getAttribute('data-bgcolor');
+    list[i].style.backgroundColor = src;
 }
 
 /* Background slide show Background variables  */
 var imageList = $('.slide-show .img');
 var imageSlides = [];
 for (var i = 0; i < imageList.length; i++) {
-	var src = imageList[i].getAttribute('data-src');
-	imageSlides.push({src: src});
+    var src = imageList[i].getAttribute('data-src');
+    imageSlides.push({src: src});
 }
 
 
@@ -88,10 +88,11 @@ var arrowElem = $('.p-footer .arrow-d');
 var pageElem = $('.page');
 
 /* 3. Init all plugin on load */
-$(document).ready(function() {
-	/* Init console to avoid error */
-	var method;
-    var noop = function () {};
+$(document).ready(function () {
+    /* Init console to avoid error */
+    var method;
+    var noop = function () {
+    };
     var methods = [
         'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
         'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
@@ -109,59 +110,60 @@ $(document).ready(function() {
             console[method] = noop;
         }
     }
-	
-	/* Init Slidesow background */
-	 $('.slide-show').vegas({
+
+    /* Init Slidesow background */
+    $('.slide-show').vegas({
         delay: 5000,
         shuffle: true,
         slides: imageSlides,
-    	//transition: [ 'zoomOut', 'burn' ],
-		animation: [ 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight' ]
+        //transition: [ 'zoomOut', 'burn' ],
+        animation: ['kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight']
     });
-	
-	/* Init video background */
-	$('.video-container video, .video-container object').maximage('maxcover');
-	
-	/* Init youtube video background */
-	if(backgroundVideoUrl != 'none'){
-        
+
+    /* Init video background */
+    $('.video-container video, .video-container object').maximage('maxcover');
+
+    /* Init youtube video background */
+    if (backgroundVideoUrl != 'none') {
+
         //disable video background for smallscreen
-        if($(window).width() > 640){
-          $.okvideo({ source: backgroundVideoUrl,
-                    adproof: true
-                    });
+        if ($(window).width() > 640) {
+            $.okvideo({
+                source: backgroundVideoUrl,
+                adproof: true
+            });
         }
     }
-	
-	/** Init fullpage.js */
+
+    /** Init fullpage.js */
     $('#mainpage').fullpage({
-		menu: '#qmenu',
-		anchors: ['home',  'register', 'photo','about-us', 'contact'],
+        menu: '#qmenu',
+        anchors: ['home', 'photo', 'register', 'about-us', 'contact'],
 //        verticalCentered: false,
 //        resize : false,
 //		responsive: 900,
-		scrollOverflow: true,
+        scrollOverflow: true,
         css3: false,
         navigation: true,
-		onLeave: function(index, nextIndex, direction){
-			arrowElem.addClass('gone');
-			pageElem.addClass('transition');
+        onLeave: function (index, nextIndex, direction) {
+            arrowElem.addClass('gone');
+            pageElem.addClass('transition');
 //			$('.active').removeClass('transition');
-			slideElem.removeClass('transition');
-			isSlide = false;
-		},
-        afterLoad: function(anchorLink, index){
-			arrowElem.removeClass('gone');
-			pageElem.removeClass('transition');
-			if(isSlide){
-				slideElem.removeClass('transition');
-			}
-		},
-		
-        afterRender: function(){}
+            slideElem.removeClass('transition');
+            isSlide = false;
+        },
+        afterLoad: function (anchorLink, index) {
+            arrowElem.removeClass('gone');
+            pageElem.removeClass('transition');
+            if (isSlide) {
+                slideElem.removeClass('transition');
+            }
+        },
+
+        afterRender: function () {
+        }
     });
 });
-
 
 
 // Email validation text, uncomment below to use them
