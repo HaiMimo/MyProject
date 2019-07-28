@@ -36,6 +36,9 @@
     <link rel="stylesheet" href="css/main_responsive.css">
     <link rel="stylesheet" href="css/style-color1.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         #jp_container_1 {
             position: fixed;
@@ -97,7 +100,7 @@
                 <span class="seconds">36</span><span class="thin">秒</span></div>
         </div>
         <footer>
-            <p>2019年 <strong>10月14日</strong></p>
+            <p>距离 2019年 <strong>10月14日</strong> 还有</p>
         </footer>
     </div>
 </div>
@@ -120,6 +123,11 @@
                     <h4 class="subhead"><a href="#register">婚礼庆典</a></h4>
                 </div>
             </header>
+            <br/>
+            <article class="text">
+                <p>花径不曾缘客扫，蓬门今始为君开。　</p>
+                <p>盘飧市远无兼味，樽酒家贫只旧醅。 </p>
+            </article>
         </section>
 
         <!-- Scroll down button -->
@@ -142,12 +150,20 @@
         <section class="content">
             <header class="p-title">
                 <h3>相爱 <i class="ion ion-android-information"> </i></h3>
-                <h4 class="subhead">照片</h4>
+                <h4 class="subhead">桃之夭夭，灼灼其华。之子于归，宜其室家</h4>
             </header>
-            <!--article class="text">
-                      <p>花径不曾缘客扫，蓬门今始为君开。　</p>
-                      <p>盘飧市远无兼味，樽酒家贫只旧醅。 </p>
-                  </article-->
+            <div class="slider">
+                <div>
+                    <img src="zp/1.JPG">
+                </div>
+                <div>
+                    <img src="zp/85.JPG">
+                </div>
+                <div>
+                    <img src="zp/84.JPG">
+                </div>
+            </div>
+
         </section>
         <footer class="p-footer p-scrolldown"><a href="#contact">
             <div class="arrow-d">
@@ -170,18 +186,23 @@
                 <form id="mail-subscription" class="form magic send_email_form" method="get"
                       action="ajaxserver/serverfile.php">
                     <p class="invite"><br/>
-                        请在下方输入到场宾客姓名我们将提前为您安排坐席：</p>
-                    <div class="fields clearfix">
-                        <div class="input">
-                            <label for="reg-email">姓名： </label>
-                            <input id="reg-email" class="email_f" name="email" type="text" required placeholder="嘉宾姓名"
-                                   data-validation-type="text">
-                        </div>
-                        <div class="buttons">
-                            <button id="submit-email" class="button email_b" name="submit_email">确认</button>
-                        </div>
-                    </div>
-                    <p class="email-ok invisible"><strong>等一场千年雨歇，侯一人如约而至！</strong></p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;   天天想夜夜念，只求白头到老不分散!谢天谢地谢父母，这梦终于能实现;明日吉日选良辰，新郎新娘把婚结;
+                        <br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;   朋友多年没相见，大喜之日聚聚餐;我的喜帖已送到，明日可得准时到!</p>
+                    <p  class="invite">
+                        <strong>等一场千年雨歇，侯一人如约而至！</strong>
+                    </p>
+                    <!--<div class="fields clearfix">-->
+                        <!--<div class="input">-->
+                            <!--<label for="reg-email">姓名： </label>-->
+                            <!--<input id="reg-email" class="email_f" name="email" type="text" required placeholder="嘉宾姓名"-->
+                                   <!--data-validation-type="text">-->
+                        <!--</div>-->
+                        <!--<div class="buttons">-->
+                            <!--<button id="submit-email" class="button email_b" name="submit_email">确认</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<p class="email-ok invisible"></p>-->
                 </form>
             </div>
         </section>
@@ -195,42 +216,27 @@
     </div>
     <!-- End of register page -->
 
-    <!-- Begin of about us page -->
-    <div class="section page-about page page-cent" id="s-about-us">
-        <section class="content">
-            <header class="p-title">
-                <h3>关于我们 <i class="ion ion-android-information"> </i></h3>
-                <h4 class="subhead">适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</h4>
-                <h4 class="subhead">来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></h4>
-            </header>
-            <!--article class="text">
-                      <p>花径不曾缘客扫，蓬门今始为君开。　</p>
-                      <p>盘飧市远无兼味，樽酒家贫只旧醅。 </p>
-                  </article-->
-        </section>
-        <footer class="p-footer p-scrolldown"><a href="#contact">
-            <div class="arrow-d">
-                <div class="before">Contact</div>
-                <div class="after">Message</div>
-                <div class="circle"><i class="ion ion-mouse"></i></div>
-            </div>
-        </a></footer>
-    </div>
-    <!-- End of about us page -->
-
     <!-- Begin of Contact page   -->
     <div class="section page-contact page page-cent  bg-color" data-bgcolor="rgba(95, 25, 208, 0.88)s" id="s-contact">
         <!-- Begin of contact information -->
         <div class="slide" id="s-information" data-anchor="information">
             <section class="content">
                 <header class="p-title">
-                    <h3>地址<i class="ion ion-location"> </i></h3>
+                    <a href="http://map.baidu.com/?newmap=1&s=inf%26uid%3Da61500c52fa38761f72310b0%26wd%3D%E5%BA%B7%E5%9F%8E%E5%9B%BD%E9%99%85%26all%3D1%26c%3D86&from=alamap&tpl=map_singlepoint"
+                       target="_blank">
+                        <h3>地址
+                            <i class="ion ion-location"> </i>
+                        </h3>
+                    </a>
                     <ul class="buttons">
-                        <li class="show-for-medium-up"><a title="About" href="#about-us"><i
-                                class="ion ion-android-information"></i></a></li>
-                        <!--<li>
-                                                <a title="Contact" href="#contact/information"><i class="ion ion-location"></i></a>
-                                            </li>-->
+                        <li class="show-for-medium-up">
+                            <a title="About" href="#about-us">
+                                <i class="ion ion-android-information"></i>
+                            </a>
+                        </li>
+                        <!--<li>-->
+                        <!--<a title="Contact" href="#contact/information"><i class="ion ion-location"></i></a>-->
+                        <!--</li>-->
                         <li><a title="Message" href="#contact/message"><i class="ion ion-email"></i></a></li>
                     </ul>
                 </header>
@@ -354,6 +360,8 @@
 <!-- Form script -->
 <script src="js/form_script.js"></script>
 
+<script src="js/slick.min.js"></script>
+
 <!-- Javascript main files -->
 <script src="js/main.js"></script>
 <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
@@ -373,6 +381,28 @@
             supplied: "mp3"
         });
     });
+
+    $('.slider').slick({
+        arrows: false, // 左右箭头
+        dots: false, //指示点
+        infinite: true, //循环播放
+        speed: 500, // 滑动时间
+        slidesToShow: 1, // 幻灯片每屏个数
+        centerMode: true, //中心模式
+        variableWidth: true, //
+        draggable: true, //启用桌面拖动
+        touchMove: true, // 触摸滑动
+        autoplay: true, // 自动播放
+        autoplaySpeed: 3000, // 自动播放间隔
+    });
+
+    $('.slider')
+        .on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            $('.slick-list').addClass('do-transition')
+        })
+        .on('afterChange', function () {
+            $('.slick-list').removeClass('do-transition')
+        });
 </script>
 <div id="jquery_jplayer_1"></div>
 <div id="jp_container_1"><a href="#" class="jp-play">
